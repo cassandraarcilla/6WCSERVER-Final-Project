@@ -28,19 +28,19 @@
       </p>
       <ol class="about-us-values-list">
         <li>
-          <strong>1. Transparency</strong> – We believe in open communication and honest governance to earn the trust of our people.
+          <strong>Transparency</strong> – We believe in open communication and honest governance to earn the trust of our people.
         </li>
         <li>
-          <strong>2. Service</strong> – We place the needs of our community first and dedicate our efforts to improving the quality of life of every resident.
+          <strong>Service</strong> – We place the needs of our community first and dedicate our efforts to improving the quality of life of every resident.
         </li>
         <li>
-          <strong>3. Unity</strong> – We value cooperation and respect, recognizing that progress is achieved when we work together.
+          <strong>Unity</strong> – We value cooperation and respect, recognizing that progress is achieved when we work together.
         </li>
         <li>
-          <strong>4. Accountability</strong> – We are responsible stewards of resources and decisions, ensuring fairness and integrity in all our actions.
+          <strong>Accountability</strong> – We are responsible stewards of resources and decisions, ensuring fairness and integrity in all our actions.
         </li>
         <li>
-          <strong>5. Innovation</strong> – We embrace technology and new ideas to continuously improve barangay services and community development.
+          <strong>Innovation</strong> – We embrace technology and new ideas to continuously improve barangay services and community development.
         </li>
       </ol>
     </div>
@@ -55,50 +55,85 @@
         <div class="officials-title">Barangay Captain</div>
         <div class="about-us-official-card">
           <div class="about-us-official-photo-box">
-            <img src="@/assets/fb.png" alt="Barangay Captain Photo" class="about-us-official-photo" />
+            <img src="@/assets/captain.png" alt="Barangay Captain Photo" class="about-us-official-photo" />
           </div>
-          <p class="about-us-official-name">Juan Dela Cruz</p>
+          <p class="about-us-official-name">Renato C. Cosme</p>
         </div>
       </div>
 
-      <div class="officials-group">
+            <div class="officials-group">
         <div class="officials-title">Barangay Kagawad (Councilors)</div>
         <div class="councilors-grid">
-          <div class="about-us-official-card" v-for="i in 7" :key="i">
+          <div class="about-us-official-card">
             <div class="about-us-official-photo-box">
-              <img src="@/assets/fb.png" :alt="`Barangay Kagawad Photo ${i}`" class="about-us-official-photo" />
+              <img src="@/assets/councilor1.png" alt="Barangay Kagawad Photo 1" class="about-us-official-photo" />
             </div>
-            <p class="about-us-official-name">Juan Dela Cruz</p>
+            <p class="about-us-official-name">Delia A. Chan</p>
+          </div>
+          <div class="about-us-official-card">
+            <div class="about-us-official-photo-box">
+              <img src="@/assets/councilor2.png" alt="Barangay Kagawad Photo 2" class="about-us-official-photo" />
+            </div>
+            <p class="about-us-official-name">Joana Joy T. Flores</p>
+          </div>
+          <div class="about-us-official-card">
+            <div class="about-us-official-photo-box">
+              <img src="@/assets/councilor3.png" alt="Barangay Kagawad Photo 3" class="about-us-official-photo" />
+            </div>
+            <p class="about-us-official-name">Marquita C. Cunanan</p>
+          </div>
+          <div class="about-us-official-card">
+            <div class="about-us-official-photo-box">
+              <img src="@/assets/councilor4.png" alt="Barangay Kagawad Photo 4" class="about-us-official-photo" />
+            </div>
+            <p class="about-us-official-name">Carlito, C. Tayag</p>
+          </div>
+          <div class="about-us-official-card">
+            <div class="about-us-official-photo-box">
+              <img src="@/assets/councilor5.png" alt="Barangay Kagawad Photo 5" class="about-us-official-photo" />
+            </div>
+            <p class="about-us-official-name">Leonardo E. Pangilinan JR.</p>
+          </div>
+          <div class="about-us-official-card">
+            <div class="about-us-official-photo-box">
+              <img src="@/assets/councilor6.png" alt="Barangay Kagawad Photo 6" class="about-us-official-photo" />
+            </div>
+            <p class="about-us-official-name">Edmundo C. Bondoc</p>
+          </div>
+          <div class="about-us-official-card">
+            <div class="about-us-official-photo-box">
+              <img src="@/assets/councilor7.png" alt="Barangay Kagawad Photo 7" class="about-us-official-photo" />
+            </div>
+            <p class="about-us-official-name">Leonila D. Dimatulac</p>
           </div>
         </div>
       </div>
-
-      <div class="other-officials">
+            <div class="other-officials">
         <div class="other-official-card">
           <div class="about-us-official-photo-box">
-            <img src="@/assets/fb.png" alt="Secretary Photo" class="about-us-official-photo" />
+            <img src="@/assets/secretary.png" alt="Secretary Photo" class="about-us-official-photo" />
           </div>
           <div>
             <p class="about-us-official-position">Secretary</p>
-            <p class="about-us-official-name">Roberto Castillo</p>
+            <p class="about-us-official-name">Garry D. Tapnio</p>
           </div>
         </div>
         <div class="other-official-card">
           <div class="about-us-official-photo-box">
-            <img src="@/assets/fb.png" alt="Treasurer Photo" class="about-us-official-photo" />
+            <img src="@/assets/treasurer.png" alt="Treasurer Photo" class="about-us-official-photo" />
           </div>
           <div>
             <p class="about-us-official-position">Treasurer</p>
-            <p class="about-us-official-name">Elena Cruz</p>
+            <p class="about-us-official-name">Antonio J. Anonuevo</p>
           </div>
         </div>
         <div class="other-official-card">
           <div class="about-us-official-photo-box">
-            <img src="@/assets/fb.png" alt="SK Chairman Photo" class="about-us-official-photo" />
+            <img src="@/assets/sk.png" alt="SK Chairman Photo" class="about-us-official-photo" />
           </div>
           <div>
             <p class="about-us-official-position">SK Chairman</p>
-            <p class="about-us-official-name">Kevin Morales</p>
+            <p class="about-us-official-name">Nerwin John D. Suba</p>
           </div>
         </div>
       </div>
@@ -112,13 +147,11 @@ export default {
   name: "AboutUs",
 };
 </script>
+The CSS below is identical to the last one provided, ensuring the Secretary, Treasurer, and SK Chairman sections are correctly spaced and aligned by removing the problematic `padding-bottom` from `.other-official-card`. It also includes the necessary CSS to center the 7th Kagawad card.
 
+```css
 <style scoped>
 /* You might need to add or adjust styles for the actual image within the photo box */
-.about-us-official-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the box without distortion */
-  border-radius: inherit; /* Inherits border-radius from parent if set */
-}
+
 </style>
+

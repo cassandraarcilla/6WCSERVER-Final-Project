@@ -2,15 +2,15 @@
 
 ## Developers
 
-Developed by Group 3
-Course: Web Server Management (6WCSERVER)
-Project: Barangay Information System
+### Developed by Group 3
+### Course: Web Server Management (6WCSERVER)
+### Project: Barangay Information System
 
-Members:
+## Members:
 
-Alimurung Anne
-Cassandra Arcilla
-Tolention Sherene
+### Alimurung Anne
+### Cassandra Arcilla
+### Tolention Sherene
 
 ## This project is a Barangay Information System built with:
 

@@ -1,4 +1,3 @@
-<!-- contact.vue -->
 <template>
   <div class="contact-page-container">
     <div class="contact-content-box">
@@ -28,20 +27,21 @@
 
       <div class="contact-form-container">
         <form class="contact-form">
-          <label for="name" class="sr-only">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Full Name" class="contact-form-input" />
+          
+          <label for="name" class="contact-form-label">Full Name:</label>
+          <input type="text" id="name" name="name" class="contact-form-input" />
 
-          <label for="email" class="sr-only">Email</label>
-          <input type="email" id="email" name="email" placeholder="Email" class="contact-form-input" />
+          <label for="email" class="contact-form-label">Email:</label>
+          <input type="email" id="email" name="email" class="contact-form-input" />
 
-          <label for="contact-number" class="sr-only">Contact Number</label>
-          <input type="tel" id="contact-number" name="contact-number" placeholder="Contact Number" class="contact-form-input" />
+          <label for="contact-number" class="contact-form-label">Contact Number:</label>
+          <input type="tel" id="contact-number" name="contact-number" class="contact-form-input" />
 
-          <label for="address" class="sr-only">Address</label>
-          <input type="text" id="address" name="address" placeholder="Address" class="contact-form-input" />
+          <label for="address" class="contact-form-label">Address:</label>
+          <input type="text" id="address" name="address" class="contact-form-input" />
 
-          <label for="message" class="sr-only">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Message" class="contact-form-textarea"></textarea>
+          <label for="message" class="contact-form-label">Message:</label>
+          <textarea id="message" name="message" rows="6" class="contact-form-textarea"></textarea>
 
           <button type="submit" class="contact-submit-btn">SEND</button>
         </form>

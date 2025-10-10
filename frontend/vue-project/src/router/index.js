@@ -1,25 +1,31 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
+// Import pages
 import Home from '../views/Home.vue'
-import AboutUs from '../views/AboutUs.vue'
-import Services from '../views/Services.vue'
-import Announcement from '../views/Announcement.vue'
-import Contact from '../views/Contact.vue'
-import Signin from '../views/Signin.vue' // Import the new Signin component
-import Signup from '../views/Signup.vue' // Import the new Signup component
+import Landing from '../views/landing.vue'
+import AboutUs from '../views/aboutUs.vue'
+import Services from '../views/services.vue'
+import Announcement from '../views/announcement.vue'
+import Contact from '../views/contact.vue'
+import MyAccount from '../views/myAccount.vue'
+import SignIn from '../views/signin.vue'
+import SignUp from '../views/signup.vue'
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
+  { path: '/', name: 'Landing', component: Landing },
+  { path: '/home', name: 'Home', component: Home },    
   { path: '/about', name: 'AboutUs', component: AboutUs },
   { path: '/services', name: 'Services', component: Services },
   { path: '/announcement', name: 'Announcement', component: Announcement },
   { path: '/contact', name: 'Contact', component: Contact },
-  { path: '/signin', name: 'Signin', component: Signin }, // Add the new sign-in route
-  { path: '/signup', name: 'Signup', component: Signup }, // Add the new sign-up route
+  { path: '/my-account', name: 'MyAccount', component: MyAccount },
+  { path: '/signin', name: 'SignIn', component: SignIn },
+  { path: '/signup', name: 'SignUp', component: SignUp }
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes
 })
 
 export default router

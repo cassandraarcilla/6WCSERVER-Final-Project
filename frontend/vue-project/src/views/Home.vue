@@ -3,24 +3,10 @@
     <section class="home-header-section">
       <div class="home-title-container">
         <h1 class="home-header-title">
-          Barangay Information System
+          BARANGAY STO. ROSARIO INFORMATION SYSTEM
         </h1>
       </div>
-      <div class="home-buttons-container">
-        <router-link
-          to="/signin"
-          class="home-sign-in-btn"
-        >
-          SIGN IN
-        </router-link>
-        <router-link
-          to="/signup"
-          class="home-sign-up-btn"
-        >
-          SIGN UP
-        </router-link>
-      </div>
-    </section>
+          </section>
 
     <section class="home-welcome-section">
       <div class="home-welcome-content">
@@ -49,27 +35,27 @@
       </p>
       <ol class="home-features-list">
         <li>
-          <strong>Barangay Clearance Request</strong>
+          <strong> Barangay Clearance Request</strong>
           <p>Residents can submit clearance requests online and claim their documents at the barangay hall once approved.</p>
         </li>
         <li>
-          <strong>Business Permit Assistance</strong>
+          <strong> Business Permit Assistance</strong>
           <p>Simplifies the process of applying for or renewing small business permits.</p>
         </li>
         <li>
-          <strong>Certificate Processing</strong>
+          <strong> Certificate Processing</strong>
           <p>Apply for important documents like residency certificates or barangay IDs without hassle.</p>
         </li>
         <li>
-          <strong>Complaint and Concern Submission</strong>
+          <strong> Complaint and Concern Submission</strong>
           <p>Report issues, disputes, or community concerns directly to the barangay for proper action.</p>
         </li>
         <li>
-          <strong>Lost and Found Reporting</strong>
+          <strong> Lost and Found Reporting</strong>
           <p>Easily report or claim lost items through the barangay portal.</p>
         </li>
         <li>
-          <strong>Event Announcements</strong>
+          <strong> Event Announcements</strong>
           <p>Stay updated with official announcements, events, and community programs.</p>
         </li>
       </ol>
@@ -91,3 +77,4 @@ export default defineComponent({
   name: "Home",
 });
 </script>
+

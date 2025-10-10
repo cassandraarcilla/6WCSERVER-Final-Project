@@ -66,9 +66,11 @@
           </li>
         </ul>
       </fieldset>
+
       <div class="services-online-form-btn-box">
         <div class="services-subheading">Online Request Form</div>
         <div class="services-online-form">
+          
           <div class="services-form-section">
             <div class="services-subheading-small">Personal Information</div>
             <label for="full-name">Full Name:</label>
@@ -82,6 +84,7 @@
             <label for="email">Email:</label>
             <input type="email" id="email" />
           </div>
+
           <div class="services-form-section">
             <div class="services-subheading-small">Purpose of Request</div>
             <p>Document Type Requested</p>
@@ -102,16 +105,22 @@
               Business Permit
             </label>
           </div>
+
           <div class="services-form-section">
             <div class="services-subheading-small">Upload Your Files</div>
-            <p>Please upload your supporting documents for verification:</p>
-            <ul class="upload-list">
-              <li>Copy of Valid ID</li>
-              <li>Proof of Address / Supporting Documents</li>
-              <li>Completed Form (if downloaded and filled offline)</li>
-            </ul>
+            <div class="its_services-subheading-1">
+              <p>Please upload your supporting documents for verification:</p>
+              <div class="its_services-upload-list">
+                <ul>
+                  <li>Copy of Valid ID</li>
+                  <li>Proof of Address / Supporting Documents</li>
+                  <li>Completed Form (if downloaded and filled offline)</li>
+                </ul>
+              </div>
+            </div>
             <button class="upload-btn">UPLOAD</button>
           </div>
+
         </div>
       </div>
       
@@ -123,6 +132,7 @@
           <li>For urgent requests, please call or email the barangay office directly.</li>
         </ul>
       </div>
+
     </div>
   </div>
 </template>

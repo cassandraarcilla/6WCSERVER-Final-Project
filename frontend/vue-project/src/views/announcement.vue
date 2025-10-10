@@ -32,7 +32,7 @@
           </ul>
         </div>
         <div class="announcement-placeholder-image">
-          <img src="@/assets/fb.png" alt="Free Medical & Dental Checkups" class="announcement-program-image" />
+          <img src="@/assets/free_med 1.png" alt="Free Medical & Dental Checkups" class="announcement-program-image" />
         </div>
       </div>
 
@@ -45,7 +45,7 @@
           </ul>
         </div>
         <div class="announcement-placeholder-image">
-          <img src="@/assets/fb.png" alt="Livelihood Training Programs" class="announcement-program-image" />
+          <img src="@/assets/livelihood_prog 1.png" alt="Livelihood Training Programs" class="announcement-program-image" />
         </div>
       </div>
 
@@ -58,7 +58,7 @@
           </ul>
         </div>
         <div class="announcement-placeholder-image">
-          <img src="@/assets/fb.png" alt="Sports Events" class="announcement-program-image" />
+          <img src="@/assets/sports_event 1.png" alt="Sports Events" class="announcement-program-image" />
         </div>
       </div>
     </div>
