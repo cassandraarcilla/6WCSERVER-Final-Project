@@ -1,13 +1,11 @@
 <template>
   <header class="navbar">
     <div class="nav-container">
-      <!-- Logo always visible -->
       <router-link to="/" class="logo-wrapper">
         <img src="@/assets/logo.png" alt="Logo" class="logo-img" />
       </router-link>
 
-      <!-- Navigation links -->
-      <nav class="nav-links" v-if="!hideLinks">
+      <nav class="nav-links">
         <router-link to="/home" class="nav-item">Home</router-link>
         <router-link to="/about" class="nav-item">About Us</router-link>
         <router-link to="/services" class="nav-item">Services</router-link>
@@ -19,24 +17,20 @@
   </header>
 </template>
 
-<script setup>
-import { defineProps } from 'vue'
-
-const props = defineProps({
-  hideLinks: {
-    type: Boolean,
-    default: false
-  }
-})
-</script>
-
 <style scoped>
 .navbar {
-  position: sticky;
+  /* Change sticky to fixed */
+  position: fixed; 
   top: 0;
   z-index: 1000;
   background-color: #510400;
+
+  /* ADD THESE: Fixed elements lose their place, so you must define their width */
+  left: 0;
+  right: 0;
+  width: 100%; 
 }
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -68,7 +62,7 @@ const props = defineProps({
   font-weight: 600;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
-  font-size: 1.5em;
+  font-size: 2em;
   border-radius: 10px;
 }
 .nav-item:hover {
