@@ -9,6 +9,7 @@
       </p>
     </header>
 
+    <!-- All your Current Programs and Upcoming Events sections remain unchanged -->
     <div class="announcement-promo-card">
       <div class="announcement-promo-border">
         <h3 class="announcement-promo-title">Barangay Fiesta 2025</h3>
@@ -21,8 +22,8 @@
     </div>
 
     <h2 class="announcement-list-heading">Current Programs</h2>
-
     <div class="announcement-program-border">
+      <!-- Current Programs content here (unchanged) -->
       <div class="announcement-program-box">
         <div class="announcement-program-content">
           <h3 class="announcement-program-title">Free Medical & Dental Checkups</h3>
@@ -64,8 +65,8 @@
     </div>
 
     <h2 class="announcement-list-heading">Upcoming Events</h2>
-    
     <div class="announcement-event-border">
+      <!-- Upcoming Events content here (unchanged) -->
       <div class="announcement-event-box">
         <h3 class="announcement-event-title">Solo Parent Meeting</h3>
         <ul class="announcement-event-list">
@@ -109,29 +110,75 @@
       <p class="announcement-report-subtext">
         Residents can suggest or report announcements (with barangay staff approval).
       </p>
-      <form class="announcement-report-form">
-        <label for="title" class="sr-only">Title of Announcement:</label>
-        <input type="text" id="title" name="title" placeholder="Title of Announcement:" class="announcement-form-input" />
-
-        <label for="details" class="sr-only">Details / Description:</label>
-        <textarea id="details" name="details" rows="6" placeholder="Details / Description:" class="announcement-form-textarea"></textarea>
-
-        <label for="upload" class="sr-only">Uploading File/Images:</label>
-        <input 
-          type="file" 
-          id="upload" 
-          name="upload" 
-          accept="image/*" 
-          class="announcement-form-file-input"
+      <!-- Form with Vue + Axios functionality -->
+      <form class="announcement-report-form" @submit.prevent="submitAnnouncement">
+        <input
+          type="text"
+          v-model="form.title"
+          placeholder="Title of Announcement:"
+          class="announcement-form-input"
+          required
         />
-
+        <textarea
+          v-model="form.details"
+          rows="6"
+          placeholder="Details / Description:"
+          class="announcement-form-textarea"
+          required
+        ></textarea>
+        <input
+          type="file"
+          ref="fileInput"
+          accept="image/*"
+          class="announcement-form-file-input"
+          @change="handleFileUpload"
+        />
         <button type="submit" class="announcement-submit-btn">SUBMIT</button>
       </form>
     </div>
   </div>
 </template>
 
-
 <script setup>
+import { ref } from "vue";
+import axios from "axios";
 
+const form = ref({
+  title: "",
+  details: "",
+  file: null,
+});
+
+const fileInput = ref(null);
+
+const handleFileUpload = (e) => {
+  form.value.file = e.target.files[0];
+};
+
+const submitAnnouncement = async () => {
+  if (!form.value.title || !form.value.details) {
+    alert("Please fill in all required fields!");
+    return;
+  }
+
+  try {
+    const data = new FormData();
+    data.append("title", form.value.title);
+    data.append("details", form.value.details);
+    if (form.value.file) data.append("file", form.value.file);
+
+    await axios.post("http://localhost:5000/api/announcements", data, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+
+    alert("✅ Announcement submitted successfully!");
+    form.value.title = "";
+    form.value.details = "";
+    form.value.file = null;
+    fileInput.value.value = null;
+  } catch (err) {
+    console.error("Error submitting announcement:", err);
+    alert("❌ Error submitting announcement.");
+  }
+};
 </script>

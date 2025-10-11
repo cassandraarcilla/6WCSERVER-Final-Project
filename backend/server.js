@@ -1,9 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import connectDB from "./config/db.js"; // see next step
+import connectDB from "./config/db.js"; 
 import authRoutes from "./routes/auth.js";
 import requestRoutes from "./routes/requests.js";
+import announcementsRoutes from "./routes/announcements.js"; // ✅ added
+
 import fs from "fs";
 
 dotenv.config();
@@ -22,6 +24,7 @@ app.use("/uploads", express.static("uploads"));
 // ✅ Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/requests", requestRoutes);
+app.use("/api/announcements", announcementsRoutes); // ✅ added
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
