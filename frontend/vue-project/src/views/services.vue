@@ -15,6 +15,7 @@
     </div>
 
     <div class="services-page-container">
+      <!-- Services cards -->
       <div class="services-how-can-we-help-box">
         <div class="services-subheading">How Can We Help You?</div>
         <div class="service-card">
@@ -38,71 +39,31 @@
           <div class="service-description">Report community concerns or ask for assistance.</div>
         </div>
       </div>
-      
-      <fieldset class="services-request-document-box">
-        <legend class="services-subheading">Request Your Document</legend>
-        <ul class="requirements-list">
-          <li>
-            <p class="requirement-title">Barangay Clearance</p>
-            <ul>
-              <li>Valid Government-issued ID</li>
-              <li>Proof of Residence (utility bill, barangay ID, lease agreement)</li>
-            </ul>
-          </li>
-          <li>
-            <p class="requirement-title">Certificate of Indigency</p>
-            <ul>
-              <li>Barangay Clearance</li>
-              <li>Valid ID of the applicant or guardian</li>
-            </ul>
-          </li>
-          <li>
-            <p class="requirement-title">Business Permit Assistance</p>
-            <ul>
-              <li>DTI or SEC Registration</li>
-              <li>Mayor’s Permit (for renewals)</li>
-              <li>Previous Barangay Clearance</li>
-            </ul>
-          </li>
-        </ul>
-      </fieldset>
 
+      <!-- Request Form -->
       <div class="services-online-form-btn-box">
         <div class="services-subheading">Online Request Form</div>
         <div class="services-online-form">
-          
           <div class="services-form-section">
             <div class="services-subheading-small">Personal Information</div>
             <label for="full-name">Full Name:</label>
-            <input type="text" id="full-name" />
+            <input type="text" id="full-name" v-model="formData.fullName" />
             <label for="date-of-birth">Date of Birth:</label>
-            <input type="date" id="date-of-birth" />
+            <input type="date" id="date-of-birth" v-model="formData.dateOfBirth" />
             <label for="address">Address:</label>
-            <input type="text" id="address" />
+            <input type="text" id="address" v-model="formData.address" />
             <label for="contact-number">Contact Number:</label>
-            <input type="tel" id="contact-number" />
+            <input type="tel" id="contact-number" v-model="formData.contactNumber" />
             <label for="email">Email:</label>
-            <input type="email" id="email" />
+            <input type="email" id="email" v-model="formData.email" />
           </div>
 
           <div class="services-form-section">
             <div class="services-subheading-small">Purpose of Request</div>
             <p>Document Type Requested</p>
-            <label>
-              <input type="checkbox" name="document-type" value="Barangay Clearance" />
-              Barangay Clearance
-            </label>
-            <label>
-              <input type="checkbox" name="document-type" value="Certificate of Residency" />
-              Certificate of Residency
-            </label>
-            <label>
-              <input type="checkbox" name="document-type" value="Certificate of Indigency" />
-              Certificate of Indigency
-            </label>
-            <label>
-              <input type="checkbox" name="document-type" value="Business Permit" />
-              Business Permit
+            <label v-for="type in documentOptions" :key="type">
+              <input type="checkbox" :value="type" v-model="formData.documentTypes" />
+              {{ type }}
             </label>
           </div>
 
@@ -118,27 +79,130 @@
                 </ul>
               </div>
             </div>
-            <button class="upload-btn">UPLOAD</button>
+            <input type="file" multiple ref="fileInput" style="display:none" @change="handleFileUpload" />
+            <button class="upload-btn" @click.prevent="triggerFileInput">UPLOAD</button>
           </div>
 
+          <button class="submit-btn" @click.prevent="submitForm">Submit Request</button>
         </div>
       </div>
-      
-      <div class="services-notes-box">
-        <div class="services-subheading_1">Notes and Processing Time</div>
-        <ul class="notes-list">
-          <li>Processing takes 1 to 3 working days depending on the request.</li>
-          <li>Pick-up is available at the Barangay Hall during office hours: Monday to Friday, 8:00 AM – 5:00 PM.</li>
-          <li>For urgent requests, please call or email the barangay office directly.</li>
-        </ul>
-      </div>
-
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Services",
+  data() {
+    return {
+      formData: {
+        fullName: "",
+        dateOfBirth: "",
+        address: "",
+        contactNumber: "",
+        email: "",
+        documentTypes: [],
+        files: [],
+      },
+      documentOptions: [
+        "Barangay Clearance",
+        "Certificate of Residency",
+        "Certificate of Indigency",
+        "Business Permit",
+      ],
+    };
+  },
+  methods: {
+    triggerFileInput() {
+      this.$refs.fileInput.click();
+    },
+    handleFileUpload(event) {
+      this.formData.files = Array.from(event.target.files);
+    },
+    async submitForm() {
+      if (!this.formData.fullName || !this.formData.email) {
+        alert("Please fill in required fields!");
+        return;
+      }
+
+      try {
+        const data = new FormData();
+        data.append("fullName", this.formData.fullName);
+        data.append("dateOfBirth", this.formData.dateOfBirth);
+        data.append("address", this.formData.address);
+        data.append("contactNumber", this.formData.contactNumber);
+        data.append("email", this.formData.email);
+        this.formData.documentTypes.forEach(type => data.append("documentTypes[]", type));
+        this.formData.files.forEach(file => data.append("files", file));
+
+        const res = await axios.post("http://localhost:5000/api/requests/upload", data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+
+        alert("✅ Request submitted successfully!");
+        this.resetForm();
+      } catch (err) {
+        console.error(err);
+        alert("❌ Error submitting request.");
+      }
+    },
+    resetForm() {
+      this.formData = {
+        fullName: "",
+        dateOfBirth: "",
+        address: "",
+        contactNumber: "",
+        email: "",
+        documentTypes: [],
+        files: [],
+      };
+      this.$refs.fileInput.value = null;
+    },
+  },
 };
 </script>
+
+<style scoped>
+/* Style for Submit Request button */
+.submit-btn {
+  display: block;
+  background-color: #510400; /* Dark red background */
+  color: #fff;               /* White text */
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1rem auto 0 auto; /* top margin + center horizontally */
+}
+
+.submit-btn:hover {
+  background-color: #7a1a1a; /* Slightly lighter red on hover */
+  transform: scale(1.05);
+}
+
+/* Style Upload button to match and center */
+.upload-btn {
+  display: block;
+  background-color: #510400;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.5rem auto 0 auto; /* top margin + center horizontally */
+}
+
+.upload-btn:hover {
+  background-color: #7a1a1a;
+  transform: scale(1.05);
+}
+</style>
+
