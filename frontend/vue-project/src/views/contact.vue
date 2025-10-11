@@ -26,22 +26,22 @@
       </div>
 
       <div class="contact-form-container">
-        <form class="contact-form">
+        <form class="contact-form" @submit.prevent="submitContact">
           
           <label for="name" class="contact-form-label">Full Name:</label>
-          <input type="text" id="name" name="name" class="contact-form-input" />
+          <input type="text" id="name" v-model="form.name" class="contact-form-input" required />
 
           <label for="email" class="contact-form-label">Email:</label>
-          <input type="email" id="email" name="email" class="contact-form-input" />
+          <input type="email" id="email" v-model="form.email" class="contact-form-input" required />
 
           <label for="contact-number" class="contact-form-label">Contact Number:</label>
-          <input type="tel" id="contact-number" name="contact-number" class="contact-form-input" />
+          <input type="tel" id="contact-number" v-model="form.contactNumber" class="contact-form-input" required />
 
           <label for="address" class="contact-form-label">Address:</label>
-          <input type="text" id="address" name="address" class="contact-form-input" />
+          <input type="text" id="address" v-model="form.address" class="contact-form-input" required />
 
           <label for="message" class="contact-form-label">Message:</label>
-          <textarea id="message" name="message" rows="6" class="contact-form-textarea"></textarea>
+          <textarea id="message" v-model="form.message" rows="6" class="contact-form-textarea" required></textarea>
 
           <button type="submit" class="contact-submit-btn">SEND</button>
         </form>
@@ -61,7 +61,31 @@
 </template>
 
 <script setup>
-// No script needed for this component.
+import { reactive } from "vue";
+import axios from "axios";
+
+const form = reactive({
+  name: "",
+  email: "",
+  contactNumber: "",
+  address: "",
+  message: "",
+});
+
+const submitContact = async () => {
+  try {
+    await axios.post("http://localhost:5000/api/contact", form);
+    alert("✅ Message sent successfully!");
+    form.name = "";
+    form.email = "";
+    form.contactNumber = "";
+    form.address = "";
+    form.message = "";
+  } catch (err) {
+    console.error("Error sending contact message:", err);
+    alert("❌ Error sending message.");
+  }
+};
 </script>
 
 <style scoped>
