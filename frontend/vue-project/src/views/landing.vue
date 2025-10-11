@@ -33,7 +33,7 @@
           <li>Sign Up – Create a resident account</li>
           <li>Explore Services – View our offerings</li>
         </ul>
-        <router-link to="/about" class="landing-learn-more-btn">Learn More About Us</router-link>
+        <router-link to="/signin" class="landing-learn-more-btn">Learn More About Us</router-link>
       </div>
       <div class="landing-access-image">
         <img src="@/assets/homePurpose.png" alt="Quick Access Image" />

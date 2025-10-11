@@ -1,11 +1,13 @@
 <template>
   <header class="navbar">
     <div class="nav-container">
+      <!-- Logo always visible -->
       <router-link to="/" class="logo-wrapper">
         <img src="@/assets/logo.png" alt="Logo" class="logo-img" />
       </router-link>
 
-      <nav class="nav-links">
+      <!-- Navigation links -->
+      <nav class="nav-links" v-if="!hideLinks">
         <router-link to="/home" class="nav-item">Home</router-link>
         <router-link to="/about" class="nav-item">About Us</router-link>
         <router-link to="/services" class="nav-item">Services</router-link>
@@ -16,6 +18,17 @@
     </div>
   </header>
 </template>
+
+<script setup>
+import { defineProps } from 'vue'
+
+const props = defineProps({
+  hideLinks: {
+    type: Boolean,
+    default: false
+  }
+})
+</script>
 
 <style scoped>
 .navbar {
