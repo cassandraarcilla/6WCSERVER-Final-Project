@@ -976,12 +976,11 @@ legend.services-subheading {
 
 /* --- announcement.vue --- */
 /* Reset page overflow */
+
 body, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* prevent horizontal scrollbar */
-  /* Global fix: Your global CSS file (main.css) should apply background-color: #f7f3e3; to the body. */
-  /* FIX ADDED: Guarantees full height containment */
+  overflow-x: hidden;
   max-height: 100vh; 
 }
 
@@ -1283,7 +1282,7 @@ body::-webkit-scrollbar {
   padding: 0.5em;
   margin: 0 auto;
   /* CRITICAL FIX 5: This final element must have zero margin below it */
-  margin-bottom: 0; 
+  margin-bottom: 1em; 
   border-radius: 50px;
   border: none;
   cursor: pointer;
