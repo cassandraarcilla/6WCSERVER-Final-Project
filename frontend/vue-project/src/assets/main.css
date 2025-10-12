@@ -1,0 +1,2519 @@
+/* * {
+  outline: 2px solid blue;
+} */
+
+html, body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;   
+}
+
+#app, main {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Home.vue Styles --- */
+body {
+  font-family: Arial, sans-serif;
+  color: #000;
+  /* CHANGED: This is the only line you need to update */
+  background-color: #6F1A07; 
+  margin: 0;
+}
+
+/* Header Section */
+.home-header-section {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  background-image: url('../assets/frontpage_home photo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 8em;
+
+}
+
+
+.home-header-title {
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #800000;
+  text-shadow: none;
+  text-align: center;
+  padding: 0.2em 0.5em;
+  border-radius: 2em;
+  margin-top: 0;
+  white-space: nowrap;
+  background-color: #F7F3E3;
+}
+
+
+.home-title-container {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+
+/* Welcome Section */
+.home-welcome-section {
+  background-color: #6F1A07;
+  color: #fff;
+  padding: 4rem 1.5rem;
+}
+
+
+.home-welcome-content {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f7f3e3;
+  color: #4b2e2e;
+  padding: 1.2rem;
+  border-radius: 3rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+
+.home-welcome-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+
+.home-welcome-text {
+  font-size: 30px;
+  line-height: 1.625;
+}
+
+
+/* Purpose Section */
+.home-purpose-section {
+  background-color: #f7f3e3;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+@media (min-width: 768px) {
+  .home-purpose-section {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
+}
+
+
+.home-purpose-text-container {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+
+@media (min-width: 768px) {
+  .home-purpose-text-container {
+    width: 50%;
+    margin-bottom: 0;
+    text-align: center;
+    margin-left: 3rem;
+  }
+}
+
+
+.home-purpose-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #800000;
+  margin-bottom: 1rem;
+  text-align: left;
+  margin-left: 2rem;
+}
+
+
+.home-purpose-paragraph {
+  font-size: 27px;
+  margin-bottom: 2rem;
+  color: #800000;
+  text-align: left;
+  margin-left: 2rem;
+}
+
+
+.home-learn-more-btn {
+  background-color: #fff;
+  color: #800000;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 2px solid #800000;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.home-learn-more-btn:hover {
+  background-color: #f5e8b3;
+}
+
+
+/* Image styling */
+.home-purpose-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+@media (min-width: 768px) {
+  .home-purpose-image {
+    width: 50%;
+    height: 30rem;
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    margin-right: 5rem;
+    margin-left: 0;
+  }
+}
+
+
+/* Features Section */
+.home-features-section {
+  background-color: #6F1A07;
+  padding: 3rem 1.5rem;
+  color: #f7f3e3;
+}
+
+
+.home-features-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #f7f3e3;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  margin-left: 4.5rem;
+}
+
+
+.home-features-subtitle {
+  font-size: 27px;
+  font-weight: normal;
+  color: #f7f3e3;
+  text-align: left;
+  margin-bottom: 2rem;
+  margin-left: 4.5rem;
+  padding-right: 0;
+}
+
+
+.home-features-list {
+  max-width: 64rem;
+  margin-left: 5rem;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: #f7f3e3;
+  list-style-type: none;
+  counter-reset: feature-counter;
+}
+
+
+.home-features-list li {
+  position: relative;
+  font-size: 27px;
+}
+
+
+.home-features-list li::before {
+  counter-increment: feature-counter;
+  content: counter(feature-counter) ".";
+  position: absolute;
+  left: -2rem;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+
+.home-features-list li strong {
+  font-size: 27px;
+  font-weight: 700;
+  color: #f7f3e3;
+  display: block;
+}
+
+
+.home-features-list li p {
+  font-size: 27px;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  margin-left: 0;
+}
+
+
+/* Limitations Section */
+.home-limitations-section {
+  background-color: #f7f3e3;
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+
+
+.home-limitations-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #800000;
+  margin-bottom: 1rem;
+  margin-left: 4rem;
+}
+
+
+.home-limitations-text {
+  max-width: 100%;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  font-size: 30px;
+  color: #800000;
+  padding-bottom: 1rem;
+}
+
+
+/* --- FOOTER --- */
+.home-footer-section {
+  background-color: #510400;
+  color: #fff;
+  padding: 3% 5%;
+  text-align: left;
+}
+
+.home-footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+
+@media (min-width: 768px) {
+  .home-footer-content {
+    flex-direction: row;
+  }
+}
+
+.home-footer-contact-info,
+.home-footer-follow-us {
+  margin: 0;
+}
+
+
+.home-footer-heading {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+
+.home-footer-contact-info p,
+.home-footer-follow-us p {
+  font-size: 1.5em;
+  margin: 0.3em 0;
+}
+
+
+.home-footer-copyright {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 1.5em;
+}
+
+/* --- aboutUs.vue --- */
+.about-us-container {
+  background-color: #f7f3e3;
+  padding: 2rem 1rem;
+  /* FIX: Aggressively remove all bottom margin/padding to prevent a gap above the footer */
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 7.5em;
+}
+
+.about-us-content-box,
+.about-us-mission-box,
+.about-us-vision-box,
+.about-us-values-box {
+  max-width: 100%;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  text-align: center;
+  margin: 4em 5em;
+}
+
+.about-us-content-box {
+  background-color: #f7f3e3;
+  color: #510400;
+  border: 15px solid #510400;
+  margin-bottom: 3em;
+}
+
+.about-us-mission-box,
+.about-us-vision-box {
+  background-color: #510400;
+  color: #f7f3e3;
+  text-align: center;
+  max-width: 100%;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.about-us-values-box .about-us-heading {
+  font-size: 4em;
+  color: #f7f3e3;
+  text-align: center;
+}
+
+.about-us-values-box {
+  background-color: #a27373;
+  color: #f7f3e3;
+  /* FIX: Adjusted padding for better alignment and flow */
+  padding: 2.5rem 5em;
+  text-align: left;
+}
+
+.about-us-heading {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #510400;
+  text-align: center;
+  padding: 0;
+  margin-top: 0;
+}
+
+.about-us-mission-box .about-us-subheading,
+.about-us-vision-box .about-us-subheading {
+  font-size: 4em;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f7f3e3;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.about-us-text {
+  font-size: 2.1em;
+  line-height: 1.4;
+}
+
+.about-us-officials-text {
+  font-size: 2.3rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #800000;
+  margin: 0 5rem;
+}
+
+.about-us-values-list {
+  /* FIX: Use default ordered list style to correctly format the numbers */
+  list-style: decimal;
+  /* FIX: Ensure numbers are visible and aligned by giving it left padding */
+  padding-left: 1.5rem;
+  /* FIX: Remove top/bottom margin */
+  margin: 1rem 0 0;
+}
+
+.about-us-values-list li {
+  margin-bottom: 1.5rem;
+  font-size: 2.1em;
+  line-height: 1.6;
+  /* Resetting text-align left in case parent forced center */
+  text-align: left;
+}
+
+.about-us-values-list strong {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.about-us-officials-section {
+  padding: 2rem 1rem;
+  text-align: center;
+  /* FIX: Ensure the final section has no bottom margin/padding */
+  margin-bottom: 0 !important;
+  padding-bottom: 3em !important;
+}
+
+.about-us-officials-section .about-us-heading {
+  color: #800000;
+  margin-bottom: 1rem;
+}
+
+.officials-group {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.officials-group:last-of-type {
+  /* FIX: Remove bottom margin from the last group containing officials (Councilors) */
+  margin-bottom: 0;
+}
+
+.officials-title {
+  display: inline-block;
+  background-color: #f7f3e3;
+  color: #000;
+  font-weight: bold;
+  font-size: 2.5rem;
+  border: 5px solid #6F1A07;
+  border-radius: 2em;
+  padding: 0.3rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-us-official-card {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+/* FIX: Set all official photo boxes (Captain and Kagawads) to 150px x 150px */
+.about-us-official-photo-box {
+  /* Set default size for all photo boxes */
+  width: 150px;
+  height: 150px;
+  background-color: #d9d9d9;
+  /* Reduced bottom margin for better card spacing */
+  margin: 0 auto 1.5em;
+}
+
+.about-us-official-name {
+  /* ADJUSTMENT: Keeping the size you specified (1.25rem) in the provided code */
+  font-size: 2.3em;
+  color: #800000;
+  /* FIX: Remove all top/bottom margins and padding */
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.1; /* Slightly tightens line spacing */
+}
+
+.about-us-official-position {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #510400;
+  /* FIX: Remove all top/bottom margins and padding */
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.1; /* Slightly tightens line spacing */
+}
+
+
+
+.councilors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.councilors-grid > :last-child {
+  grid-column: 2 / span 1;
+}
+
+.other-officials {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 500px;
+  /* FIX: Ensure separation from the section above and below, using a standard margin */
+  margin: 3rem auto 3rem;
+}
+
+.other-official-card {
+  display: flex;
+  /* Ensures vertical centering */
+  align-items: center;
+  gap: 1.5rem;
+  /* FIX: Removed the excessive padding-bottom (was 5em, then 2em) to collapse card spacing */
+  padding-bottom: 0;
+  text-align: left;
+}
+
+/* --- Fix Secretary, Treasurer, SK photo boxes --- */
+.other-official-card .about-us-official-photo-box {
+  width: 150px !important;       /* fixed width */
+  height: 150px !important;      /* fixed height */
+  min-width: 150px !important;   /* prevent shrinking */
+  min-height: 150px !important;  /* prevent shrinking */
+  max-width: 150px !important;   /* prevent stretching */
+  max-height: 150px !important;  /* prevent stretching */
+  background-color: #d9d9d9;
+  overflow: hidden;              /* ensure image doesn't overflow */
+  flex-shrink: 0;                /* prevents flexbox from resizing */
+  /* FIX: Removed previous margin to rely solely on parent's 'gap' property */
+  margin: 0;   
+}
+
+.other-official-card {
+  display: flex;
+  /* Ensures vertical centering */
+  align-items: center;
+  /* FIX: Set the horizontal space (gap) between the photo box and text to 4em */
+  gap: 4em; 
+  /* FIX: Removed the excessive padding-bottom (was 5em, then 2em) to collapse card spacing */
+  padding-bottom: 0;
+  text-align: left;
+}
+
+
+
+
+
+.other-official-position {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #510400;
+  line-height: 1; 
+  margin-bottom: 2.5em; /* space between position and name */
+}
+
+.other-official-name {
+  font-size: 1.3rem;
+  color: #510400;
+  margin: 0; /* remove default top/bottom margin */
+}
+
+
+
+
+
+
+.about-us-official-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the box without distortion */
+  border-radius: inherit; /* Inherits border-radius from parent if set */
+}
+
+
+/* --- Services.vue Styles --- */
+body {
+  background-color: #6F1A07;
+}
+
+
+.services-page-container {
+  padding: 2rem 1rem;
+}
+
+
+.services-intro-full-width {
+  margin-top: 2rem;
+  background-color: #a27373;
+  color: #f7f3e3;
+  padding: 1rem 0;
+}
+
+
+.services-intro-wrapper {
+  background-color: #800000;
+}
+
+
+.services-intro-content {
+  margin: 0 5rem;
+  text-align: center;
+}
+
+
+.services-intro-text {
+  font-size: 2em;
+  line-height: 1.2;
+  text-align: center;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+.services-intro-box,
+.services-how-can-we-help-box,
+.services-request-document-box {
+  max-width: 85%;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+
+.services-intro-box {
+  color: #f7f3e3;
+  border: 4px solid #510400;
+}
+
+
+.services-request-document-box {
+  background-color: #f7f3e3;
+  color: #f7f3e3;
+  border: 3px solid #000;
+}
+
+
+.services-subheading {
+  width: fit-content;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  color: #6F1A07;
+  background-color: #ECF0F1;
+  text-align: center;
+  border-radius: 0.7em;
+  padding: 1rem 1rem;
+  border: 10px solid #6F1A07;
+  display: block;
+}
+
+
+legend.services-subheading {
+  width: fit-content;
+  font-size: 3.2em;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-bottom: 0;
+  color: #F7F3E3;
+  background-color: #A27373;
+  text-align: center;
+  border-radius: 15px;
+  padding: 0.5 0.5rem;
+  border: 10px solid #000;
+  display: block;
+}
+
+
+.service-card {
+  background-color: #f7f3e3;
+  color: #6F1A07;
+  border: 4px solid #000;
+  border-radius: 7px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+
+.service-title {
+  font-weight: bold;
+  font-size: 2.1em;
+}
+
+
+.service-description {
+  font-size: 2.1em;
+}
+
+
+.requirements-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+
+.requirements-list > li {
+  margin-bottom: 1.5rem;
+}
+
+
+.requirements-list .requirement-title {
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #800000;
+}
+
+
+.requirements-list ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  color: #800000;
+  font-size: 30px;
+  margin-left: 5rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+  margin-top: 0;
+}
+
+
+.services-online-form-btn-box {
+  color: #f7f3e3;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.services-form-section {
+  width: 90%;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; 
+}
+
+.services-subheading-small {
+  font-weight: bold;
+  font-size: 2.3em;
+  text-align: center;
+  color: #f7f3e3;
+  background-color: #a27373;
+  border-radius: 40px;
+  padding: 0.3em 0.7em;
+  display: inline-block;
+  white-space: nowrap;
+  
+  /* CENTERING */
+  margin: 2em 0 1em 0; /* only top/bottom spacing */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.services-online-form label,
+.services-online-form ul {
+  text-align: left;
+  font-size: 1.5em;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+
+.services-online-form p {
+  font-size: 1.5em;
+  margin-left: 3.1em;
+}
+
+
+.its_services-upload-list ul {
+  list-style-type: disc; /* or none if you prefer */
+  padding-left: 1.5em;   /* adjust indentation */
+  margin: 0;
+}
+
+.its_services-upload-list li {
+  font-size: 1em;
+  margin-bottom: 0.8rem;
+  color: #f7f3e3;
+}
+
+
+
+.services-online-form input[type="text"],
+.services-online-form input[type="tel"],
+.services-online-form input[type="email"],
+.services-online-form input[type="date"] {
+  width: 70%;             /* constrained width */
+  max-width: 70%;
+  padding: 1.3em;
+  font-size: 1rem;
+  margin: 0 auto 2.5em;  /* center horizontally + vertical spacing */
+  border: 2px solid #ccc;
+  background-color: #6F1A07;
+  color: #f7f3e3;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;         /* ensures it respects margin auto */
+}
+
+
+.services-online-form input[type="date"] {
+  color-scheme: dark;
+}
+
+
+.services-online-form input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  transform: scale(1.2);
+  margin-left: 6em;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+
+.services-online-form label {
+  display: block;
+  font-weight: normal;
+  font-size: 1.5em;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem; /* space between label and input */
+  color: #f7f3e3;
+  text-align: left;      
+  margin-left: 3.3em;
+}
+
+
+
+.upload-list {
+  list-style-type: disc;
+}
+
+
+.upload-btn {
+  font-size: 2em;
+  text-align: center;
+  display: block;
+  margin: 2rem auto;
+  background-color: #f7f3e3;
+  color: #800000;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+.upload-btn:hover {
+  background-color: #510400;
+  color: #f7f3e3;
+  border: 1px solid #f7f3e3;
+}
+
+
+/* Specific styling for the upload instruction section */
+.its_services-subheading-1 {
+  font-size: 1..5em;           /* size of the paragraph text */
+  color: #f7f3e3;          /* padding around the section */
+  max-width: 90%;             /* prevent stretching too wide */
+  line-height: 1.6;           /* improve readability */
+}
+
+/* Target the paragraph inside this section */
+.its_services-subheading-1 p {
+  margin-bottom: 1rem;  
+  margin-left: 0;    
+  margin-top: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 1.5em;
+}
+
+/* Target the list inside this section */
+.its_services-subheading-1 ul.upload-list {
+  list-style: disc;           /* standard bullet points */
+  padding-left: 2rem;         /* indent bullets */
+  text-align: left;           /* keep list items left-aligned */
+  margin: 0 auto 2rem auto;   /* spacing and center container */
+  max-width: 80%;             /* prevent stretching too wide */
+  color: #f7f3e3;             /* match theme */
+}
+
+
+.services-notes-box {
+  background-color: #f7f3e3;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-bottom: 3rem;
+  padding-left: 2em;
+  padding-right: 0;
+  padding-top: 2em;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #510400;
+}
+
+
+.notes-list {
+  list-style-type: disc;
+  padding: 0;
+  text-align: left;
+  color: #800000;
+}
+
+
+.notes-list li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #800000;
+  margin-left: 8rem;
+  margin-right: 3rem;
+  font-weight: normal;
+  font-size: 30px;
+}
+
+/* --- announcement.vue --- */
+/* Reset page overflow */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-height: 100vh; 
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.announcement-page-container {
+  background-color: #f7f3e3;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 6em;
+  flex: 1 0 auto;
+  min-height: calc(100vh - [footer-height]); /* Replace [footer-height] with actual footer height */
+}
+
+
+.announcement-header-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 3rem;
+  color: #800000;
+}
+
+
+.announcement-main-title {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+
+.announcement-sub-text {
+  font-size: 1.9em;
+  margin-top: 1.5em;
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+
+.announcement-promo-card {
+  background-color: #a27373;
+  color: #f7f3e3;
+  padding: 2.5rem;
+  margin: 1rem auto;
+  max-width: 100%;
+}
+
+
+.announcement-promo-border {
+  border: 10px solid #410E02;
+  border-radius: 20px;
+  margin: 0 2em;
+}
+
+
+
+.announcement-promo-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+.announcement-promo-list {
+  list-style: disc;
+  padding-left: 2rem;
+  font-size: 2.1rem;
+  text-align: left;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 2rem;
+}
+
+
+.announcement-promo-list li {
+  margin-bottom: 0.5rem;
+}
+
+
+.announcement-list-heading {
+  font-size: 3em;
+  font-weight: 700;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  color: #510400;
+}
+
+
+.announcement-program-border {
+  background-color: #a27373;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.announcement-program-border,
+.announcement-report-section,
+.announcement-promo-card {
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.announcement-program-box,
+.announcement-livelihood-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3em;
+  margin: 5rem auto;
+  max-width: 95%;
+  border-radius: 2.5em;
+  border: 10px solid #410E02;
+}
+
+
+.announcement-program-box {
+  background-color: #6F1A07;
+  color: #f7f3e3;
+  padding-right: 3em;
+}
+
+
+.announcement-livelihood-box {
+  background-color: #a27373;
+  color: #f7f3e3;
+}
+
+
+.announcement-program-content {
+  flex: 1;
+}
+
+
+.announcement-program-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+}
+
+
+.announcement-program-list {
+  list-style-type: disc;
+  padding-left: 3rem;
+  margin-right: 5rem;
+  font-size: 2.5rem;
+}
+
+
+.announcement-placeholder-image {
+  width: 300px;
+  height: 300px;
+  background-color: #f7f3e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: #4b2e2e;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+
+.announcement-program-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.announcement-event-border {
+  background-color: #a27373;
+  padding: 0.5rem;
+}
+
+.announcement-event-box {
+  background-color: #a27373;
+  color: #F7F3E3;
+  padding: 1em 3em;
+  margin: 5rem auto;
+  max-width: 92%;
+  border-radius: 2.5em;
+  border: 10px solid #6F1A07;
+  line-height: 1.6;
+  /* Reduced space before final section */
+  margin-bottom: 2rem; 
+}
+
+
+.announcement-event-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+
+.announcement-event-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 2.1rem;
+}
+
+
+.announcement-event-list li {
+  margin-bottom: 0.5rem;
+}
+
+
+.announcement-report-section {
+  background-color: #a27373;
+  padding-top: 2rem; 
+  /* CRITICAL FIX 1: Set internal bottom spacing to 0 */
+  padding-bottom: 0;
+  
+  /* CRITICAL FIX 2: Set external margin to 0 for the last section */
+  margin: 2rem auto 0; 
+  max-width: 100%;
+  
+  /* ULTIMATE FIX 3: Prevents margin collapse from the children (like the form/button) 
+     from bleeding out, ensuring the section's height is correctly contained. */
+  overflow: hidden; 
+}
+.announcement-report-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #510400;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+
+.announcement-report-subtext {
+  font-size: 2.1rem;
+  color: #f7f3e3;
+  margin-bottom: 2em;
+  margin-top: 0;
+  text-align: center;
+}
+
+
+.announcement-report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* CRITICAL FIX 4: Ensure the form container itself does not push down */
+  padding-bottom: 0; 
+}
+
+
+.announcement-form-input,
+.announcement-form-textarea {
+  width: 90%;
+  padding: 1rem;
+  background-color: transparent;
+  border: 5px solid #f7f3e3;
+  color: #f7f3e3;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  margin: 1em auto;
+}
+
+
+.announcement-form-textarea {
+  resize: vertical;
+}
+
+
+.announcement-form-input::placeholder,
+.announcement-form-textarea::placeholder {
+  color: #f7f3e3;
+  opacity: 0.7;
+}
+
+
+.announcement-form-file-input {
+  width: 90%;
+  padding: 0.8rem;
+  background-color: transparent;
+  border: 5px solid #f7f3e3;
+  color: #f7f3e3;
+  font-size: 1rem;
+  margin: 1em auto;
+}
+
+
+.announcement-submit-btn {
+  background-color: #510400;
+  color: #f7f3e3;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 0.5em;
+  margin: 0 auto;
+  /* CRITICAL FIX 5: This final element must have zero margin below it */
+  margin-bottom: 1em; 
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+.announcement-submit-btn:hover {
+  background-color: #f7f3e3;
+  color: #800000;
+  border: 1px solid #800000;
+}
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+footer {
+  background-color: #410E02;
+  color: #f7f3e3;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  /* ✅ Ensures footer stays at the very bottom */
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  /* ✅ Prevents page from scrolling beyond the footer */
+  overflow: hidden;
+}
+
+footer p { 
+  margin-bottom: -1em;
+}
+
+
+/* --- contact.vue Styles --- */
+.contact-page-container {
+  min-height: 100vh;
+  background-color: #6F1A07;
+  color: #510400;
+  padding-top: 6em;
+}
+
+.contact-content-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 100%;
+  padding-top: 2rem;
+  padding-left: 5rem;
+  padding-right: 3rem;
+  padding-bottom: 2rem;
+  background-color: #f7f3e3;
+}
+
+
+.contact-info-container,
+.contact-form-container {
+  flex: 1;
+  margin-right: 3rem;
+  margin-top: 2rem;
+}
+
+
+.contact-title {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.5rem; 
+  margin-top: 1.4em;
+}
+
+.contact-subheading {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  margin-top: 2.5em;
+}
+
+
+.contact-list {
+  list-style: none;
+  font-size: 1.5em;
+}
+
+
+.contact-list li {
+  display: flex;
+  align-items: left;
+  margin-bottom: 1rem;
+}
+
+
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+}
+
+
+.contact-form-label {
+  display: block; /* Important: makes the label take up full width, placing it above the input */
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #510400;
+  margin-top: 1.5rem; /* Space above the label */
+  margin-bottom: 0.5rem; /* Space between the label and the input */
+}
+/* For the first label, reduce the top margin since it follows a heading */
+.contact-form-container form .contact-form-label:first-of-type {
+    margin-top: 0;
+}
+
+.contact-form-input,
+.contact-form-textarea {
+  /* margin-top: 1em; - REMOVED, managed by .contact-form-label */
+  width: 100%;
+  padding: 1em 1em;
+  margin-bottom: 0; /* Remove bottom margin here; space is now managed by the next label's margin-top */
+  border: 1px solid #ccc;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+
+.contact-form-textarea {
+  resize: vertical;
+}
+
+
+.contact-submit-btn {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 30%;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #6F1A07;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.contact-submit-btn:hover {
+  background-color: #510400;
+}
+
+
+.contact-footer {
+  background-color: #f7f3e3;
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 3rem;
+}
+
+
+.contact-footer-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.contact-footer-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+
+.contact-footer-address {
+  font-size: 1.8em;
+  line-height: 1;
+  color: #510400;
+}
+
+.contact-map-container {
+  margin: 2rem auto;
+  max-width: 90%;
+  height: 700px; /* makes it taller */
+}
+
+.contact-map-container iframe {
+  width: 100%;
+  height: 100%; /* fills the container */
+  border: 0;
+}
+
+
+.contact-copyright {
+  font-size: 0.9rem;
+  color: #510400;
+  margin-top: 2rem;
+}
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* --- Signin.vue --- */
+.auth-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f3e3;
+  padding-top: 6em;
+}
+
+
+.auth-form-box {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow: hidden;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+.auth-form-box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+
+.auth-box-left,
+.auth-box-right {
+  flex: 0 0 50%;
+  max-width: 50%;
+  min-height: 600px;
+  box-sizing: border-box;
+}
+
+
+.auth-box-left {
+  background-color: #e5e5e5;
+  border-right: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+
+.auth-box-right {
+  padding: 3rem 4rem;
+  text-align: center;
+  background: #f7f3e3;
+}
+
+
+/* responsive: stack on small screens */
+@media (max-width: 900px) {
+  .auth-form-box {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .auth-box-left,
+  .auth-box-right {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  /* optional: hide the left placeholder on very small screens */
+  /* .auth-box-left { display: none; } */
+}
+
+
+.auth-image-placeholder {
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.auth-title {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #800000;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+}
+
+.auth-form-input {
+  width: 100%;
+  padding: 0.8rem 0.8em;
+  margin-bottom: 3rem;
+  border: 2px solid #ccc;
+  background-color: #ECF0F1;
+  padding: 1.5em;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+}
+
+
+.auth-submit-btn {
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5em;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #fff;
+  background-color: #800000;
+  border: none;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.auth-submit-btn:hover {
+  background-color: #f7f3e3;
+  color: #510400;
+  border: 1px solid #510400;
+}
+
+
+.auth-link-text {
+  margin-top: 1rem;
+  font-size: 2em;
+  color: #510400;
+}
+
+
+.auth-link {
+  font-weight: 700;
+  color: #510400;
+  text-decoration: underline;
+}
+
+
+.auth-form {
+  margin-bottom: 1.5rem;
+}
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+.auth-big-placeholder {
+  width: 150%;
+  height: 200%;
+  background-color: #e6e6e6;
+  position: relative;
+}
+
+
+.auth-big-placeholder::before,
+.auth-big-placeholder::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.auth-big-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.auth-small-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.5rem;
+}
+
+
+/* ===== signup.vue ===== */
+.signup-page-container {
+  display: block;
+  padding: 0;
+  background-color: #f7f3e3;
+  font-family: Arial, sans-serif;
+  padding-top: 5.5em;
+}
+
+
+.reg-header-text {
+  background-color: #a27373;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  padding-bottom: 4em;
+}
+
+
+.reg-title {
+  font-size: 2.8em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding-top: 2rem;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+
+.reg-subtitle {
+  font-size: 2em;
+  line-height: 1.3;
+  min-width: unset;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+
+.reg-form-box {
+  background-color: #a27373;
+}
+
+
+.reg-section {
+  border-top: 5px solid #000;
+  border-bottom: 5px solid #000;
+  padding: 1.5rem 1rem;
+  position: relative;
+  margin-bottom: 5em;
+  background-color: #f7f3e3;
+}
+
+
+.reg-section_2 {
+  border-top: 5px solid #000;
+  border-bottom: 5px solid #000;
+  padding: 1.5rem 1rem;
+  position: relative;
+  background-color: #f7f3e3;
+}
+
+
+.reg-section-label {
+  position: absolute;
+  top: -2.8rem;
+  left: 1.2rem;
+  transform: none;
+  background-color: #ECF0F1;
+  color: #800000;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 1.2rem;
+  border: 5px solid #410E02;
+  margin-left: 2.5em;
+}
+
+
+.reg-form-group {
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+}
+
+
+.reg-form-label {
+  font-weight: bold;
+  color: #800000;
+  margin-bottom: 0.5rem;
+  display: block;
+  margin-top: 4.5rem;
+  margin-left: 5.5em;
+  font-size: 2.5em;
+}
+
+
+.reg-form-label_2 {
+  font-weight: bold;
+  color: #800000;
+  margin-bottom: 0.5rem;
+  margin-left: 8.5rem;
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  margin-left: 15rem;
+  font-size: 2.5em;
+}
+
+
+.reg-input {
+  display: block;
+  width: 70%;
+  padding: 0.7em 0.5em;
+  font-size: 1.5em;
+  border: 2px solid #800000;
+  border-radius: 0.2rem;
+  background-color: #f7f3e3;
+  color: #800000;
+  margin: 0 auto;
+}
+
+
+.reg-input:focus {
+  outline: none;
+  border-color: #550000;
+}
+.reg-gender-options {
+  display: flex;
+  gap: 1.4em;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  color: #800000;
+  font-weight: normal;
+  font-size: 2.5rem;
+}
+
+
+.reg-radio {
+  margin-right: 1rem;
+  /* FIX: Make the radio button bigger. Scale it up by 1.5x. */
+  transform: scale(1.5); 
+  /* Adjust margin to keep it visually centered after scaling */
+  margin-top: 0.05em;
+}
+
+/* Update the container for the two half-width inputs */
+.reg-two-columns {
+  /* FIX: Change direction to row to make them sit side-by-side */
+  display: flex;
+  flex-direction: row; 
+  gap: 2rem; /* Add spacing between the two columns */
+  /* FIX: Constrain the container's width and center it to match the single inputs */
+  width: 70%; 
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.col-half {
+  flex: 1; /* Makes each column take up 50% of the available space in the row */
+}
+
+/* Ensure the form group padding and label positioning are correct for the new columns */
+.reg-two-columns .reg-form-group {
+  /* Reset the side padding from the general .reg-form-group to avoid double padding */
+  padding: 0; 
+}
+
+/* Ensure the labels inside the two-column layout are aligned correctly */
+.reg-two-columns .reg-form-label {
+    /* Reset the large left margin set on the general .reg-form-label */
+    margin-left: 0; 
+}
+
+/* Ensure the inputs inside the half-columns take up all available space */
+.reg-two-columns .reg-input {
+    /* Set back to 100% of the column width, but remove auto margin */
+    width: 100%;
+    margin: 0;
+}
+
+
+
+.col-half {
+  flex: 1;
+}
+
+
+.reg-agreements {
+  background-color: #a27373;
+  padding: 1.5rem 1rem;
+  padding-left: 7rem;
+}
+
+
+.reg-agreement-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #510400;
+  font-size: 2.5em;
+  line-height: 1.4;
+}
+
+
+.reg-checkbox {
+  width: 2em;
+  height: 2em;
+  accent-color: #f7f3e3;
+  border: 2px solid #f7f3e3;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+
+.reg-form-actions {
+  background-color: #a27373;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 0.8rem;
+}
+
+
+.reg-btn-reset,
+.reg-btn-submit {
+  padding: 0.3em 0.7em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 2.5em;
+  font-weight: bold;
+  border-radius: 2em;
+  border: 5px solid #800000;
+  cursor: pointer;
+  min-width: 100px;
+  transition: 0.3s ease;
+}
+
+
+.reg-btn-reset {
+  background-color: #f7f3e3;
+  color: #6F1A07;
+  
+}
+
+
+.reg-btn-reset:hover {
+  background-color: #6F1A07;
+  color: #f7f3e3;
+}
+
+
+.reg-btn-submit {
+  background-color: #6F1A07;
+  color: #f7f3e3;
+  border: none;
+}
+
+
+.reg-btn-submit:hover {
+  background-color: #f7f3e3;
+  color: #510400;
+  border: 2px solid #510400;
+}
+
+
+.reg-login-text {
+  background-color: #a27373;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  color: #510400;
+  font-size: 2.5em;
+}
+
+
+.reg-login-link {
+  font-weight: bold;
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+
+.reg-login-link:hover {
+  text-decoration: underline;
+}
+
+/* landing.vue */
+.landing-page {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+}
+
+/* HEADER SECTION */
+.landing-header-section {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  background-image: url('../assets/frontpage_home photo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 8em;
+}
+
+.landing-title-container {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.landing-header-title {
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #800000;
+  text-shadow: none;
+  text-align: center;
+  padding: 0.2em 0.5em;
+  border-radius: 2em;
+  margin-top: 0;
+  white-space: nowrap;
+  background-color: #F7F3E3;
+}
+
+.landing-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.2em;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.landing-sign-in-btn,
+.landing-sign-up-btn {
+  font-size: 1.5em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 3em;
+  padding: 0.4em 1.4em;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.landing-sign-in-btn {
+  background-color: #f7f3e3;
+  color: #800000;
+  border: 0.1em solid #800000;
+}
+
+.landing-sign-in-btn:hover {
+  background-color: #510400;
+  color: #f7f3e3;
+}
+
+.landing-sign-up-btn {
+  background-color: #510400;
+  color: #f7f3e3;
+}
+
+.landing-sign-up-btn:hover {
+  background-color: #f7f3e3;
+  color: #510400;
+  border: 0.1em solid #510400;
+}
+
+/* INTRO SECTION */
+.landing-intro-section {
+  background-color: #6F1A07;
+  padding: 6.5% 5%;
+  text-align: center;
+}
+
+.landing-intro-box {
+  background-color: #f7f3e3;
+  border-radius: 2em;
+  padding: 1.5em;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.landing-intro-title {
+  font-size: 2.5em;
+  color: #510400;
+  font-weight: 700;
+  margin-bottom: 0.6em;
+}
+
+.landing-intro-text {
+  font-size: 2em;
+  color: #510400;
+  line-height: 1.4;
+}
+
+/* QUICK ACCESS SECTION */
+.landing-access-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f3e3;
+  padding: 5% 8%;
+  gap: 3em;
+}
+
+@media (min-width: 768px) {
+  .landing-access-section {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.landing-access-text {
+  flex: 1;
+  text-align: left;
+  color: #800000;
+}
+
+.landing-access-title {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.landing-access-list {
+  font-size: 2em;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2em;
+  list-style-type: disc;
+  margin-left: 1em;
+}
+
+.landing-access-list li {
+  margin-bottom: 1em;
+}
+
+.landing-learn-more-btn {
+  background-color: #fff;
+  color: #6F1A07;
+  font-weight: 700;
+  padding: 0.5em 1.5em;
+  border-radius: 5em;
+  border: 0.2em solid #410E02;
+  text-decoration: none;
+  font-size: 1.8em;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;  
+  display: block; /* or inline-block works with margin auto */
+  margin: 0 auto; /* center horizontally */
+  max-width: fit-content;
+}
+
+.landing-learn-more-btn:hover {
+  background-color: #6F1A07;
+  color: #f7f3e3;
+  stroke: #410E02;
+}
+
+.landing-access-image {
+  flex: 1;
+  justify-content: flex-end; 
+  display: flex;
+  margin-left: 0;
+}
+
+
+.landing-access-image img {
+  width: 75%;
+  height: 75%;
+}
+
+/* myAccount.vue */
+:root {
+  --color-maroon-dark: #7b2428; 
+  --color-maroon-medium: #8f3439; 
+  --color-beige-light: #f5eddf; 
+  --color-text-dark: #333; 
+  --color-text-light: #fff; 
+  --color-tag-bg: #b97678; 
+
+  --status-available: #388e3c;
+  --status-processing: #1976d2;
+  --status-problem: #d32f2f;
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- GLOBAL LAYOUT --- */
+/* ---------------------------------------------------------------------- */
+.profile-page-content {
+  margin-top: 2em;
+  background-color: #6F1A07;
+  padding: 20px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  padding-top: 7em;
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- 1. PROFILE HEADER CARD --- */
+/* ---------------------------------------------------------------------- */
+.profile-header-card {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: #F7F3E3;
+  padding: 20px;
+  border-radius: 2em;
+  margin: 0 5em 25px 5em;
+}
+
+.profile-avatar {
+  width: 15em;
+  height: 15em;
+  background-color: #d8d8d8; 
+  border-radius: 50%;
+  margin: 2em 3em;
+}
+
+.profile-name {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.profile-status {
+  font-size: 2.1em;
+  margin: 0 0 10px 0;
+  opacity: 0.8;
+}
+
+.profile-tags {
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  margin-top: 1rem;
+  background-color: var(--color-tag-bg);
+  padding: 15px 20px;
+  border-radius: 20em;
+  font-size: 2.1em;
+  color: var(--color-text-light);
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- 2. PERSONAL INFORMATION CARD --- */
+/* ---------------------------------------------------------------------- */
+.info-card {
+  background-color: var(--color-beige-light);
+  padding: 4em 20px;
+  border-radius: 2em;
+  margin: 3em 5em 2em 5em;
+  color: var(--color-text-dark);
+}
+
+.card-title {
+  color: var(--color-maroon-dark); 
+  font-size: 3.5em;
+  font-weight: bold;
+  margin: 0 0 20px 1em;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  display: flex;
+  align-items: flex-start;
+  margin: 2em 0 0 0;
+  line-height: 1.4;
+}
+
+.icon-img {
+  width: 2em; 
+  height: 2em;
+  margin: 0 0 0 4.5em;
+  flex-shrink: 0;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.8em;
+  color: #555;
+  padding-left: 2rem;
+}
+
+.value {
+  display: block;
+  font-size: 1.8rem;
+  padding-left: 2rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- 3. DOCUMENT REQUESTS SECTION --- */
+/* ---------------------------------------------------------------------- */
+.document-requests-wrapper {
+  background-color: var(--color-beige-light);
+  padding: 20px;
+  border-radius: 2em;
+  margin: 3em 5em 0 5em;
+}
+
+.document-request-header {
+  background-color: var(--color-beige-light); 
+  border-radius: 6px; 
+  margin: 2em 0 10px 1.5em;
+  color: #6F1A07;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.card-title-requests {
+  font-size: 1.5em;
+
+}
+
+.requests-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.request-card.fieldset-style {
+  background-color: var(--color-beige-light);
+  padding: 15px;
+  border: 0.3em solid #BFBCB0;
+  border-radius: 3em;
+  margin: 0 3em 3em 3em;
+}
+
+.request-main-content {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.request-icon {
+  width: 5em; 
+  height: 5em;
+  margin-top: 2em;
+  margin-left: 4em;
+  padding-top: -4em;
+  flex-shrink: 0;
+}
+
+.request-details {
+  flex-grow: 1;
+}
+
+.request-details h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-maroon-dark);
+  margin-top: 1.5em;
+  margin-left: 1em;
+  padding-top: -7em;
+  border-bottom: 1px solid #eee;
+}
+
+.request-details p {
+  font-size: 1.8em;
+  margin: 0 0 3px 1.2em; /* pushed to the right by 5em */
+  color: #555;
+}
+
+.request-details p.purpose {
+  font-size: 1.8rem;
+  color: #888;
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- STATUS TAGS --- */
+/* ---------------------------------------------------------------------- */
+.status-tag {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+  white-space: nowrap;
+  align-self: center;
+  border: 1px solid transparent;
+  margin-right: 3em;
+}
+
+.status-tag.available {
+  background-color: #dcf8dc;
+  color: #2e7d32;
+  border: 0.1em solid #2e7d32;
+  margin-bottom: 3em;
+}
+
+.status-tag.processing {
+  background-color: #9ECBFF;
+  color: #0D3E86;
+  border: 0.1em solid #0D3E86;
+  margin-bottom: 3em;
+}
+
+.status-tag.problem {
+  background-color: #FEE0E0;
+  color: #c62828;
+  border: 0.1em solid #EB0F0F;
+  margin-bottom: 3em;
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- CONDITIONAL STATUS ALERTS --- */
+/* ---------------------------------------------------------------------- */
+.status-alert {
+  padding: 1em;
+  border-radius: 1em;
+  font-size: 1.5em;
+  margin: 2em 3em;
+}
+
+.status-alert p {
+  margin: 0;
+  font-weight: bold;
+  display: flex; 
+  align-items: center; 
+}
+
+.status-alert .alert-subtext {
+  font-weight: normal;
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+.status-alert.ready {
+  background-color: #dcf8dc;
+  color: #2e7d32;
+  border: 5px solid #05490A;
+}
+
+.status-alert.processing {
+  background-color: #9ECBFF;
+  color: #0D3E86;
+  border: 5px solid #0D3E86;
+}
+
+.status-alert.problem {
+  background-color: #FEE0E0;
+  color: #c62828;
+  border: 5px solid #EB0F0F;
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- INLINE ALERT ICON --- */
+/* ---------------------------------------------------------------------- */
+.inline-alert-icon {
+  width: 18px; 
+  height: 18px;
+  margin-right: 8px; 
+  flex-shrink: 0;
+}
+
+
+/* log out buttons */
+.logout-container {
+  display: flex;
+  justify-content: center;
+  margin: 3em 0 5em 0;
+}
+
+.logout-button {
+  background-color: #F7F3E3;
+  color: #6F1A07;
+  font-size: 2em;
+  padding: 0.4em 1.5em;
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 0.2em solid #000;
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  background-color: #6F1A07;
+  color: #F7F3E3;
+  border: 0.2em solid #F7F3E3;
+}
