@@ -1,10 +1,13 @@
+/* * {
+  outline: 2px solid blue;
+} */
+
 html, body {
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  background-color: #fff;
+  overflow-x: hidden;   
 }
 
 #app, main {
@@ -23,7 +26,8 @@ img, video {
 body {
   font-family: Arial, sans-serif;
   color: #000;
-  background-color: #fff;
+  /* CHANGED: This is the only line you need to update */
+  background-color: #6F1A07; 
   margin: 0;
 }
 
@@ -36,7 +40,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 1.5rem;
+  margin-top: 8em;
+
 }
 
 
@@ -66,7 +71,7 @@ body {
 
 /* Welcome Section */
 .home-welcome-section {
-  background-color: #510400;
+  background-color: #6F1A07;
   color: #fff;
   padding: 4rem 1.5rem;
 }
@@ -198,7 +203,7 @@ body {
 
 /* Features Section */
 .home-features-section {
-  background-color: #800000;
+  background-color: #6F1A07;
   padding: 3rem 1.5rem;
   color: #f7f3e3;
 }
@@ -352,6 +357,7 @@ body {
   /* FIX: Aggressively remove all bottom margin/padding to prevent a gap above the footer */
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
+  padding-top: 7.5em;
 }
 
 .about-us-content-box,
@@ -484,7 +490,7 @@ body {
   color: #000;
   font-weight: bold;
   font-size: 2.5rem;
-  border: 5px solid maroon;
+  border: 5px solid #6F1A07;
   border-radius: 2em;
   padding: 0.3rem 1.5rem;
   margin-bottom: 1.5rem;
@@ -617,7 +623,7 @@ body {
 
 /* --- Services.vue Styles --- */
 body {
-  background-color: maroon;
+  background-color: #6F1A07;
 }
 
 
@@ -709,7 +715,7 @@ legend.services-subheading {
 
 .service-card {
   background-color: #f7f3e3;
-  color: maroon;
+  color: #6F1A07;
   border: 4px solid #000;
   border-radius: 7px;
   padding: 1.5rem;
@@ -839,7 +845,7 @@ legend.services-subheading {
   font-size: 1rem;
   margin: 0 auto 2.5em;  /* center horizontally + vertical spacing */
   border: 2px solid #ccc;
-  background-color: #800000;
+  background-color: #6F1A07;
   color: #f7f3e3;
   border-radius: 4px;
   box-sizing: border-box;
@@ -975,6 +981,8 @@ body, html {
   padding: 0;
   overflow-x: hidden; /* prevent horizontal scrollbar */
   /* Global fix: Your global CSS file (main.css) should apply background-color: #f7f3e3; to the body. */
+  /* FIX ADDED: Guarantees full height containment */
+  max-height: 100vh; 
 }
 
 body::-webkit-scrollbar {
@@ -984,9 +992,12 @@ body::-webkit-scrollbar {
 .announcement-page-container {
   background-color: #f7f3e3;
   max-width: 100%;
-  box-sizing: border-box; /* include padding in width */
-  /* IMPORTANT: Added margin-bottom: 0 to ensure the container itself doesn't cause a gap */
-  margin-bottom: 0; 
+  box-sizing: border-box;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 6em;
+  flex: 1 0 auto;
+  min-height: calc(100vh - [footer-height]); /* Replace [footer-height] with actual footer height */
 }
 
 
@@ -1095,7 +1106,7 @@ body::-webkit-scrollbar {
 
 
 .announcement-program-box {
-  background-color: maroon;
+  background-color: #6F1A07;
   color: #f7f3e3;
   padding-right: 3em;
 }
@@ -1158,12 +1169,13 @@ body::-webkit-scrollbar {
   background-color: #a27373;
   color: #F7F3E3;
   padding: 1em 3em;
-  margin: 2rem auto;
+  margin: 5rem auto;
   max-width: 92%;
   border-radius: 2.5em;
   border: 10px solid #6F1A07;
   line-height: 1.6;
-  margin-bottom: 5em;
+  /* Reduced space before final section */
+  margin-bottom: 2rem; 
 }
 
 
@@ -1188,10 +1200,17 @@ body::-webkit-scrollbar {
 
 .announcement-report-section {
   background-color: #a27373;
-  padding: 2rem;
-  /* FIX: Changed margin to ensure no extra space below the final element */
+  padding-top: 2rem; 
+  /* CRITICAL FIX 1: Set internal bottom spacing to 0 */
+  padding-bottom: 0;
+  
+  /* CRITICAL FIX 2: Set external margin to 0 for the last section */
   margin: 2rem auto 0; 
   max-width: 100%;
+  
+  /* ULTIMATE FIX 3: Prevents margin collapse from the children (like the form/button) 
+     from bleeding out, ensuring the section's height is correctly contained. */
+  overflow: hidden; 
 }
 .announcement-report-heading {
   font-size: 3rem;
@@ -1215,8 +1234,8 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  /* FIX: Added padding-bottom to create space inside the form section instead of using margin */
-  padding-bottom: 2rem;
+  /* CRITICAL FIX 4: Ensure the form container itself does not push down */
+  padding-bottom: 0; 
 }
 
 
@@ -1227,7 +1246,7 @@ body::-webkit-scrollbar {
   background-color: transparent;
   border: 5px solid #f7f3e3;
   color: #f7f3e3;
-  font-size: 1rem;
+  font-size: 1.5rem;
   box-sizing: border-box;
   margin: 1em auto;
 }
@@ -1263,6 +1282,8 @@ body::-webkit-scrollbar {
   font-weight: 700;
   padding: 0.5em;
   margin: 0 auto;
+  /* CRITICAL FIX 5: This final element must have zero margin below it */
+  margin-bottom: 0; 
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -1288,11 +1309,33 @@ body::-webkit-scrollbar {
   white-space: nowrap;
   border-width: 0;
 }
+
+footer {
+  background-color: #410E02;
+  color: #f7f3e3;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  /* ✅ Ensures footer stays at the very bottom */
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  /* ✅ Prevents page from scrolling beyond the footer */
+  overflow: hidden;
+}
+
+footer p { 
+  margin-bottom: -1em;
+}
+
+
 /* --- contact.vue Styles --- */
 .contact-page-container {
   min-height: 100vh;
-  background-color: maroon;
+  background-color: #6F1A07;
   color: #510400;
+  padding-top: 6em;
 }
 
 .contact-content-box {
@@ -1379,12 +1422,12 @@ body::-webkit-scrollbar {
 .contact-form-textarea {
   /* margin-top: 1em; - REMOVED, managed by .contact-form-label */
   width: 100%;
-  padding: 0.2em;
+  padding: 1em 1em;
   margin-bottom: 0; /* Remove bottom margin here; space is now managed by the next label's margin-top */
   border: 1px solid #ccc;
   background-color: #D9D9D9;
   border-radius: 5px;
-  font-size: 2.1rem;
+  font-size: 1rem;
 }
 
 
@@ -1403,7 +1446,7 @@ body::-webkit-scrollbar {
   font-size: 1.4rem;
   font-weight: 600;
   color: #fff;
-  background-color: #800000;
+  background-color: #6F1A07;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -1444,10 +1487,16 @@ body::-webkit-scrollbar {
   color: #510400;
 }
 
-
 .contact-map-container {
   margin: 2rem auto;
   max-width: 90%;
+  height: 700px; /* makes it taller */
+}
+
+.contact-map-container iframe {
+  width: 100%;
+  height: 100%; /* fills the container */
+  border: 0;
 }
 
 
@@ -1478,6 +1527,7 @@ body::-webkit-scrollbar {
   align-items: center;
   min-height: 100vh;
   background-color: #f7f3e3;
+  padding-top: 6em;
 }
 
 
@@ -1562,35 +1612,31 @@ body::-webkit-scrollbar {
 
 
 .auth-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: normal;
   color: #800000;
-  margin-bottom: 0.5rem;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
 }
-
-
-.auth-subtitle {
-  font-size: 1.1rem;
-  color: #510400;
-  margin-bottom: 2rem;
-}
-
 
 .auth-form-input {
   width: 100%;
-  padding: 0.8rem 1rem;
-  margin-bottom: 1.5rem;
+  padding: 0.8rem 0.8em;
+  margin-bottom: 3rem;
   border: 2px solid #ccc;
+  background-color: #ECF0F1;
+  padding: 1.5em;
   border-radius: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   box-sizing: border-box;
 }
 
 
 .auth-submit-btn {
-  padding: 1rem;
-  margin-top: 1rem;
-  font-size: 1.2rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5em;
+  font-size: 1.8em;
   font-weight: 700;
   color: #fff;
   background-color: #800000;
@@ -1610,7 +1656,7 @@ body::-webkit-scrollbar {
 
 .auth-link-text {
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: 2em;
   color: #510400;
 }
 
@@ -1664,8 +1710,8 @@ body::-webkit-scrollbar {
 
 
 .auth-small-image {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto 1.5rem;
@@ -1678,6 +1724,7 @@ body::-webkit-scrollbar {
   padding: 0;
   background-color: #f7f3e3;
   font-family: Arial, sans-serif;
+  padding-top: 5.5em;
 }
 
 
@@ -1686,7 +1733,7 @@ body::-webkit-scrollbar {
   color: white;
   padding: 1rem;
   text-align: center;
-  margin: 0;
+  padding-bottom: 4em;
 }
 
 
@@ -1712,7 +1759,7 @@ body::-webkit-scrollbar {
 
 
 .reg-form-box {
-  background-color: #f7f3e3;
+  background-color: #a27373;
 }
 
 
@@ -1721,7 +1768,7 @@ body::-webkit-scrollbar {
   border-bottom: 5px solid #000;
   padding: 1.5rem 1rem;
   position: relative;
-  margin-bottom: 8em;
+  margin-bottom: 5em;
   background-color: #f7f3e3;
 }
 
@@ -1762,7 +1809,7 @@ body::-webkit-scrollbar {
   margin-bottom: 0.5rem;
   display: block;
   margin-top: 4.5rem;
-  margin-left: 4.8em;
+  margin-left: 5.5em;
   font-size: 2.5em;
 }
 
@@ -1783,8 +1830,8 @@ body::-webkit-scrollbar {
 .reg-input {
   display: block;
   width: 70%;
-  padding: 1.3em 0;
-  font-size: 1rem;
+  padding: 0.7em 0.5em;
+  font-size: 1.5em;
   border: 2px solid #800000;
   border-radius: 0.2rem;
   background-color: #f7f3e3;
@@ -1799,7 +1846,7 @@ body::-webkit-scrollbar {
 }
 .reg-gender-options {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.4em;
   margin-top: 0.5rem;
   justify-content: center;
 }
@@ -1815,7 +1862,7 @@ body::-webkit-scrollbar {
 
 
 .reg-radio {
-  margin-right: 0.3rem;
+  margin-right: 1rem;
   /* FIX: Make the radio button bigger. Scale it up by 1.5x. */
   transform: scale(1.5); 
   /* Adjust margin to keep it visually centered after scaling */
@@ -1917,19 +1964,19 @@ body::-webkit-scrollbar {
 
 .reg-btn-reset {
   background-color: #f7f3e3;
-  color: #800000;
+  color: #6F1A07;
   
 }
 
 
 .reg-btn-reset:hover {
-  background-color: maroon;
+  background-color: #6F1A07;
   color: #f7f3e3;
 }
 
 
 .reg-btn-submit {
-  background-color: #800000;
+  background-color: #6F1A07;
   color: #f7f3e3;
   border: none;
 }
@@ -1982,7 +2029,7 @@ body::-webkit-scrollbar {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 1.5rem;
+  margin-top: 8em;
 }
 
 .landing-title-container {
@@ -2051,7 +2098,7 @@ body::-webkit-scrollbar {
 
 /* INTRO SECTION */
 .landing-intro-section {
-  background-color: #510400;
+  background-color: #6F1A07;
   padding: 6.5% 5%;
   text-align: center;
 }
@@ -2107,25 +2154,27 @@ body::-webkit-scrollbar {
 }
 
 .landing-access-list {
-  font-size: 2.1em;
+  font-size: 2em;
   list-style: none;
   padding-left: 0;
   margin-bottom: 2em;
+  list-style-type: disc;
+  margin-left: 1em;
 }
 
 .landing-access-list li {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .landing-learn-more-btn {
   background-color: #fff;
-  color: #510400;
+  color: #6F1A07;
   font-weight: 700;
   padding: 0.5em 1.5em;
   border-radius: 5em;
-  border: 0.2em solid #510400;
+  border: 0.2em solid #410E02;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.8em;
   display: inline-block;
   text-align: center;
   transition: background-color 0.2s ease-in-out;  
@@ -2135,19 +2184,22 @@ body::-webkit-scrollbar {
 }
 
 .landing-learn-more-btn:hover {
-  background-color: #f5e8b3;
+  background-color: #6F1A07;
+  color: #f7f3e3;
+  stroke: #410E02;
 }
 
 .landing-access-image {
   flex: 1;
   justify-content: flex-end; 
   display: flex;
+  margin-left: 0;
 }
 
 
 .landing-access-image img {
-  width: 70%;
-  height: 70%;
+  width: 75%;
+  height: 75%;
 }
 
 /* myAccount.vue */
@@ -2169,11 +2221,12 @@ body::-webkit-scrollbar {
 /* ---------------------------------------------------------------------- */
 .profile-page-content {
   margin-top: 2em;
-  background-color: maroon;
+  background-color: #6F1A07;
   padding: 20px;
   min-height: 100vh;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
+  padding-top: 7em;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -2371,18 +2424,21 @@ body::-webkit-scrollbar {
   background-color: #dcf8dc;
   color: #2e7d32;
   border: 0.1em solid #2e7d32;
+  margin-bottom: 3em;
 }
 
 .status-tag.processing {
   background-color: #9ECBFF;
   color: #0D3E86;
   border: 0.1em solid #0D3E86;
+  margin-bottom: 3em;
 }
 
 .status-tag.problem {
   background-color: #FEE0E0;
   color: #c62828;
   border: 0.1em solid #EB0F0F;
+  margin-bottom: 3em;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -2454,6 +2510,7 @@ body::-webkit-scrollbar {
   cursor: pointer;
   transition: 0.3s;
   border: 0.2em solid #000;
+  font-weight: bold;
 }
 
 .logout-button:hover {

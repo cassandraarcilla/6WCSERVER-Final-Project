@@ -38,4 +38,21 @@ router.post("/upload", upload.array("files", 10), async (req, res) => {
   }
 });
 
+// ✅ GET /api/requests?email=user@email.com - Get requests by email
+router.get("/", async (req, res) => {
+  const { email } = req.query;
+  
+  if (!email) {
+    return res.status(400).json({ error: "Email is required" });
+  }
+  
+  try {
+    const requests = await Request.find({ email: email }).sort({ createdAt: -1 });
+    res.json(requests);
+  } catch (err) {
+    console.error("Fetch error:", err);
+    res.status(500).json({ message: "Error fetching requests", error: err.message });
+  }
+});
+
 export default router;

@@ -81,6 +81,12 @@
             </div>
             <input type="file" multiple ref="fileInput" style="display:none" @change="handleFileUpload" />
             <button class="upload-btn" @click.prevent="triggerFileInput">UPLOAD</button>
+            <div v-if="formData.files.length > 0" class="files-list">
+              <p>Selected files: {{ formData.files.length }}</p>
+              <ul>
+                <li v-for="(file, index) in formData.files" :key="index">{{ file.name }}</li>
+              </ul>
+            </div>
           </div>
 
           <button class="submit-btn" @click.prevent="submitForm">Submit Request</button>
@@ -127,6 +133,11 @@ export default {
         return;
       }
 
+      if (this.formData.documentTypes.length === 0) {
+        alert("Please select at least one document type!");
+        return;
+      }
+
       try {
         const data = new FormData();
         data.append("fullName", this.formData.fullName);
@@ -137,12 +148,32 @@ export default {
         this.formData.documentTypes.forEach(type => data.append("documentTypes[]", type));
         this.formData.files.forEach(file => data.append("files", file));
 
+        // Send to backend
         const res = await axios.post("http://localhost:5000/api/requests/upload", data, {
           headers: { "Content-Type": "multipart/form-data" },
         });
 
+        // Save email to localStorage for myAccount page
+        localStorage.setItem("userEmail", this.formData.email);
+
+        // Save user profile to localStorage
+        localStorage.setItem("userProfile", JSON.stringify({
+          fullName: this.formData.fullName,
+          dateOfBirth: this.formData.dateOfBirth,
+          email: this.formData.email,
+          contactNumber: this.formData.contactNumber,
+          address: this.formData.address,
+        }));
+
+        console.log("Form submitted successfully! User email saved:", this.formData.email);
+
         alert("✅ Request submitted successfully!");
         this.resetForm();
+
+        // Redirect to myAccount page
+        setTimeout(() => {
+          this.$router.push('/my-account');
+        }, 500);
       } catch (err) {
         console.error(err);
         alert("❌ Error submitting request.");
@@ -204,5 +235,31 @@ export default {
   background-color: #7a1a1a;
   transform: scale(1.05);
 }
-</style>
 
+/* Files list styling */
+.files-list {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.files-list p {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.files-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.files-list li {
+  padding: 0.25rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+</style>
