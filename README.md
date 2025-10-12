@@ -1,7 +1,7 @@
 ## Developers
 
 ### Developed by Group 3
-### Course: Web Server Management (6WCSERVER)
+### Course: Web Server and Client Services (6WCSERVER)
 ### Project: Barangay Information System
 
 ## Members:
