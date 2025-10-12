@@ -16,7 +16,7 @@
           </li>
           <li>
             <img src="@/assets/contact.png" alt="Contact" class="contact-icon" />
-            <span class="contact-list-text">Contact: (xxx) xxx-xxxx</span>
+            <span class="contact-list-text">Contact: 0945-600-2470</span>
           </li>
           <li>
             <img src="@/assets/fb.png" alt="Facebook" class="contact-icon" />
